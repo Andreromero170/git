@@ -1,0 +1,58 @@
+Rangos de Direcciones IP por Clase
+
+Clase A 1.0.0.0 a 127.255.255.255
+Clase B 128.0.0.0 a 191.255.255.255
+Clase C 192.0.0.0 a 223.255.255.255
+Clase D 224.0.0.0 a 239.255.255.255
+Clase E 240.0.0.0 a 255.255.255.255
+
+
+--------------------------------------
+
+
+Mascara por Defecto: 
+Clase A 255.0.0.0
+Clase B 255.255.0.0
+Clase C 255.255.255.0
+ 
+Máscara adoptada: 
+
+1. Numero de hosts + 2 (1 para la direccion de red y 1 para la direccion de broadcast)
+2. Representar en binario
+La mascara por ejemplo de 25 host es de 27
+Tienes que poner 27 veces 1 y el resto en 0
+11111111.11111111.11111111.
+3. Sumar el obtecto donde hay 0 en decimal
+
+168 64 32 16 8 4 2 1
+1    1  1  0 0 0 0 0
+
+La mascara adoptada es de 224
+255.255.255.224
+
+N° total de Subredes: 
+Tomar el ultimo obtecto de la mascara adoptada, tomando solo los 1
+11100000
+2 ^ (numero de subredes o 1 encendidos)
+Ejemplo 
+
+2 ^ 3 = 8 subredes
+
+N° total de Host (Para 25 host):
+
+2 ^(32-mascara de subred)
+
+2 ^(32-27) = 32 subredes
+
+N° total de Host para mascara de subred (192.168.10.0/19):
+
+2 ^(32-mascara de subred) - 2
+Ejemplo
+2 ^(32-19) - 2 = 8.190
+
+
+git config --global user.name ""
+git config --global user.email ""
+
+
+
